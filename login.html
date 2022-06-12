@@ -98,7 +98,7 @@
 <div class="form-group c-form is-empty">
 <input type="text" name="idfaifai" class="c_input" value="" placeholder="ID người chơi">
 </div>
-<span class="c-error"></span>
+<span style="color:red;" id="err"></span>
 <button id="login" type="button" class="c-button-4">Đăng nhập</button>
 </form>
 </div>
@@ -130,5 +130,23 @@
             width: 100%;
         } */
     </style>
+<script>
+window.onload = function()
+{
+     $('#signid').modal('show');
+};
+
+    $('#checkid').click(function(){
+        var id = $('#idgame').val();
+        console.log(id.length)
+        if(id.length < 8 || id.length > 12   ){
+            $('#err').html('Id không hợp lệ')
+        }else{
+             $('#signid').modal('hide');
+            $('#signin').modal('show');
+        }
+        
+    })
+</script>
 </body>
 </html>
