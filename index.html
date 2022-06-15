@@ -86,5 +86,17 @@ console.log("%c XIN HÃY TẮT F12 ĐỂ TIẾP TỤC. %c", 'font-family: "Helve
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="https://vn-garena.vn/js/mdb.min.js"></script>
   <!-- Your custom scripts (optional) -->
+<script type="text/javascript">
+  var timeleft = 5;
+    var downloadTimer = setInterval(function(){
+    timeleft--;
+    document.getElementById("countdowntimer").textContent = timeleft;
+    if(timeleft <= 0){
+        $("#hide").hide();
+        document.getElementById("countdowntimer").remove();
+        $("#continue").show();
+    }
+    },1000);
+  </script>
 </body>
 </html>
